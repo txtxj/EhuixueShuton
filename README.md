@@ -1,6 +1,6 @@
 # e 学会 网课速通脚本
 
-```python``` 版本
+Python 版本： ```3.9```
 
 基于 ```selenium/webdriver```
 
