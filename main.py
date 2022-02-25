@@ -39,7 +39,7 @@ def login():
 def start_watch():
     while True:
         driver.find_element(By.CLASS_NAME, "cview").click()
-        driver.implicitly_wait(req_timeout)
+        driver.implicitly_wait(query_gap)
         try:
             nxt = driver.find_element(By.CLASS_NAME, "layui-btn.layui-btn-normal.layui-btn-xs")
             nxt.click()
