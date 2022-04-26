@@ -37,15 +37,21 @@ def login():
 
 
 def start_watch():
+    driver.implicitly_wait(req_timeout)
+    driver.find_element(By.CLASS_NAME, "cview").click()
     while True:
-        driver.find_element(By.CLASS_NAME, "cview").click()
         driver.implicitly_wait(query_gap)
         try:
             nxt = driver.find_element(By.CLASS_NAME, "layui-btn.layui-btn-normal.layui-btn-xs")
             nxt.click()
+            return True
         except:
             print("No 'next' button!")
 
 
 login()
-start_watch()
+
+while start_watch():
+    print("Next section start!")
+
+print("Unknown error!")
